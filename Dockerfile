@@ -18,7 +18,7 @@ php7.0-mcrypt \
 php-memcache
 
 #Packages for phalcon instalation	
-RUN apt-get install -y gcc make re2c libpcre3-dev php7.0-dev build-essential php7.0-zip
+RUN apt-get install -y gcc make re2c libpcre3-dev php7.0-dev build-essential  php7.0-zip
 
 #Install composer
 RUN curl -sS http://getcomposer.org/installer | php
@@ -45,8 +45,8 @@ RUN make
 RUN make install
 
 #phpInfo
-RUN touch /var/www/html/info.php
-RUN echo "<?php echo phpInfo(); ?>" > /var/www/html/info.php
+RUN touch /var/www/info.php
+RUN echo "<?php echo phpInfo(); ?>" > /var/www/info.php
 
 #Networking
 EXPOSE 80 443
